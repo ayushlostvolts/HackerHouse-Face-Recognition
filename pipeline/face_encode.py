@@ -9,8 +9,10 @@ Computes SHA-256 cryptographic hashes of both raw image and numerical biometric 
 import os
 import io
 import hashlib
+import ssl
 from dataclasses import dataclass
 from typing import Optional, Union, Tuple, List
+import certifi
 import numpy as np
 from PIL import Image
 import torch
@@ -77,6 +79,8 @@ class FaceEncoder:
                 device=self.device
             )
         if self.resnet is None:
+            # Use certifi for urllib model downloads while keeping TLS verification enabled.
+            ssl._create_default_https_context = lambda: ssl.create_default_context(cafile=certifi.where())
             self.resnet = InceptionResnetV1(pretrained="vggface2").eval().to(self.device)
 
     def load_image(self, image_input: Union[str, bytes, Image.Image]) -> Tuple[Image.Image, str]:

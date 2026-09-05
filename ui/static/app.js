@@ -387,7 +387,7 @@ document.addEventListener("DOMContentLoaded", () => {
       if (data.stage3_4 && data.stage3_4.best_match) {
         showToast("Verified match recorded on blockchain!", "success");
       } else {
-        showToast("Pipeline executed: No genuine social match found (Zero false positives)", "info");
+        showToast(`Pipeline completed: ${data.stage3_4?.failure_reason || "No verified match found"}`, "info");
       }
 
     } catch (err) {
@@ -476,9 +476,9 @@ document.addEventListener("DOMContentLoaded", () => {
     } else {
       topContent.innerHTML = `
         <div style="padding: 0.75rem 0; color:var(--accent-gold);">
-          <i class="fa-solid fa-triangle-exclamation"></i> <strong>No genuine match found on public social media for this photo.</strong>
+          <i class="fa-solid fa-triangle-exclamation"></i> <strong>${s34.failure_reason || "No verified match found."}</strong>
           <p style="font-size:0.82rem; color:var(--text-muted); margin-top:0.35rem;">
-            PRD Section 4.4 & 7 (Zero False-Positive Policy): Unindexed or private personal photos are not artificially matched to false candidates.
+            Zero false-positive policy: candidates are recorded only after their image is downloaded, a face is detected, and similarity reaches the configured threshold.
           </p>
         </div>
       `;

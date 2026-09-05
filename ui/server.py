@@ -163,6 +163,7 @@ async def run_full_pipeline(
     # =========================================================================
     t2_start = time.time()
     searcher = ReverseImageSearcher(serpapi_key=api_key) if api_key else reverse_searcher
+    search_error = None
 
     try:
         if image_url and (image_url.startswith("http://") or image_url.startswith("https://")):
@@ -171,13 +172,15 @@ async def run_full_pipeline(
             temp_path = os.path.join(os.path.dirname(__file__), "..", "temp_query.jpg")
             pil_img.save(temp_path, format="JPEG")
             candidates = searcher.search(temp_path, embedding=enc_res.embedding, limit=12)
-    except Exception:
+    except Exception as exc:
         candidates = []
+        search_error = str(exc)
 
     t2_duration = round(time.time() - t2_start, 3)
 
     stage2_data = {
         "total_candidates": len(candidates),
+        "error": search_error,
         "candidates": [
             {
                 "title": c.title,
@@ -235,6 +238,18 @@ async def run_full_pipeline(
         "evaluated_candidates": evaluated_list,
         "best_match": best_match_data,
         "threshold": similarity_threshold,
+        "failure_reason": (
+            "Reverse-image search failed: " + search_error
+            if search_error else
+            "No reverse-image candidates were returned"
+            if not candidates else
+            "Candidate images could not be verified"
+            if all(ev.verification_notes in {
+                "Could not download candidate image",
+                "No face detected in candidate image"
+            } for ev in report.all_evaluated) else
+            f"No candidate reached the {similarity_threshold:.0%} similarity threshold"
+        ) if not best_match_data else None,
         "duration_sec": t3_duration
     }
 

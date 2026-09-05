@@ -56,12 +56,12 @@
   },
   "e77403b06951d6718af1fd71bd39e2893d4fff97627fb8be407fc05f8c373782": {
     "image_hash_hex": "0xe77403b06951d6718af1fd71bd39e2893d4fff97627fb8be407fc05f8c373782",
-    "encoding_hash_hex": "0xab85aed52ada8745a47c2a2358da488b542276cd4930e02bade2b9ded7c8be9b",
+    "encoding_hash_hex": "0x8a5ea036f201d448f805cb54409442565bb2e0750d2960b74859f2f0bbed3c82",
     "match_url": "https://x.com/CryptooIndia/status/2094662989819580528",
     "similarity_score_bps": 9680,
-    "timestamp": 1788531413,
+    "timestamp": 1788596142,
     "recorded_by": "0x7E5F4552091A69125d5DfCb7b8C2659029395Bdf",
-    "tx_hash": "0x5f2213c4db1d20a309cf433f46f5774de555e8244e3a44d147ab6d90f909f1af",
+    "tx_hash": "0xdc9dd3db577a8b07f97f10bd9e0b62a1ed0e6d4f85ec57d7213a4f5137c63aff",
     "contract_address": "0xF2E246BB76DF876Cef8b38ae84130F4F55De395b",
     "block_number": 1482931
   },
@@ -75,5 +75,60 @@
     "tx_hash": "5ee952fc9fe5e599b6f9fce7ea3f595642179155514aad5e5cb4eee1ef7fddc2",
     "contract_address": "0xF2E246BB76DF876Cef8b38ae84130F4F55De395b",
     "block_number": 3
+  },
+  "8f45d25d171756c0b5f4d869bc8735e308ab14789c62e7b6c6f236fb6d3c1eaa": {
+    "image_hash_hex": "0x8f45d25d171756c0b5f4d869bc8735e308ab14789c62e7b6c6f236fb6d3c1eaa",
+    "encoding_hash_hex": "0x8ce9f6166ed64ff05bf0858c057514b26d8b2929c7005688c0e2c06a9578832e",
+    "match_url": "https://www.amazon.in/UNCOVER-MYSTERY-Digital-Framed-Decoration/dp/B0CVFL5Q5W",
+    "similarity_score_bps": 9164,
+    "timestamp": 1788599666,
+    "recorded_by": "0x7E5F4552091A69125d5DfCb7b8C2659029395Bdf",
+    "tx_hash": "0x52b4a1ff3eeb549556ef8e62713c7893e72e0f48d9184153fd22854dadf35de9",
+    "contract_address": "0xF2E246BB76DF876Cef8b38ae84130F4F55De395b",
+    "block_number": 1482931
+  },
+  "634358631818009dc4f4a98d222de66abdac2162da7c2704167cbe00b613c3ca": {
+    "image_hash_hex": "0x634358631818009dc4f4a98d222de66abdac2162da7c2704167cbe00b613c3ca",
+    "encoding_hash_hex": "0xe2f10862c54e269acb0f0a400dd7b9dd099a23660dabdbed1d55b73477be3389",
+    "match_url": "https://herpower.gov.bd/store/apps/details/?id=cricket | G\ud83d\udd25O\ud83d\udd25O\ud83d\udd25G\ud83d\udd25L\ud83d\udd25E\ud83d\udd25B\ud83d\udd25E\ud83d\udd25T \u2665.news",
+    "similarity_score_bps": 5158,
+    "timestamp": 1788599708,
+    "recorded_by": "0x7E5F4552091A69125d5DfCb7b8C2659029395Bdf",
+    "tx_hash": "69b57cadaa2ce414493ca3fcb78a758a4e3f5838398af11e993beefe75ec43dc",
+    "contract_address": "0xF2E246BB76DF876Cef8b38ae84130F4F55De395b",
+    "block_number": 4
+  },
+  "2225838585e5d107625991bc67e7335664c4056f33e9f9577f1f1df0b970f806": {
+    "image_hash_hex": "0x2225838585e5d107625991bc67e7335664c4056f33e9f9577f1f1df0b970f806",
+    "encoding_hash_hex": "0xe2a6b6f5bf07fc139e19f0f516dfd5e3f42d00579fc5a134714d04c09aaa1941",
+    "match_url": "https://in.linkedin.com/in/pawan-kumar-850b6bbb",
+    "similarity_score_bps": 6357,
+    "timestamp": 1788600213,
+    "recorded_by": "0x7E5F4552091A69125d5DfCb7b8C2659029395Bdf",
+    "tx_hash": "41c0ee37c756ccbbcbaaff259539f20c8a27e9b511aa6401d9db2d16bc7fafdb",
+    "contract_address": "0xF2E246BB76DF876Cef8b38ae84130F4F55De395b",
+    "block_number": 5
+  },
+  "262babd5410ad344c65bdecb5dcf487e7230b55b2f5bb1942b4b560c2738f4fa": {
+    "image_hash_hex": "0x262babd5410ad344c65bdecb5dcf487e7230b55b2f5bb1942b4b560c2738f4fa",
+    "encoding_hash_hex": "0xa4321c77a5d5039d4a881934338d64218307c71170b97c6e6a21318593c019b6",
+    "match_url": "https://www.instagram.com/popular/77-jiya/",
+    "similarity_score_bps": 6999,
+    "timestamp": 1788600351,
+    "recorded_by": "0x7E5F4552091A69125d5DfCb7b8C2659029395Bdf",
+    "tx_hash": "8adb5b3dd7f5b7bc09cb7cb9c20c63da2737cdae3192bf475c17eff0447e19ac",
+    "contract_address": "0xF2E246BB76DF876Cef8b38ae84130F4F55De395b",
+    "block_number": 6
+  },
+  "64074f415d3843f5217a161cadfcde412dedf8ffcc866e28d375156d1fb361f5": {
+    "image_hash_hex": "0x64074f415d3843f5217a161cadfcde412dedf8ffcc866e28d375156d1fb361f5",
+    "encoding_hash_hex": "0xb47fcd02c1c1f42f0f1587a692145ac8f2578167ea80009ce81c5669bd91c402",
+    "match_url": "https://www.instagram.com/sunkissed_mornings/",
+    "similarity_score_bps": 6063,
+    "timestamp": 1788600450,
+    "recorded_by": "0x7E5F4552091A69125d5DfCb7b8C2659029395Bdf",
+    "tx_hash": "f8e0ef71c2f20a63069404ee34e70021ecbd4700a1dc701e71200329ab140f82",
+    "contract_address": "0xF2E246BB76DF876Cef8b38ae84130F4F55De395b",
+    "block_number": 7
   }
 }
