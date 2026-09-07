@@ -9,7 +9,7 @@
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Outfit:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Sora:wght@500;600;700&display=swap" rel="stylesheet">
   
   <!-- FontAwesome Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
@@ -37,7 +37,7 @@
       </div>
 
       <div class="header-status">
-        <button class="status-pill settings-pill" id="openSettingsBtn" title="Configure SerpApi Key for Google Lens search">
+        <button class="status-pill settings-pill" id="openSettingsBtn" title="Configure reverse image search">
           <i class="fa-solid fa-gear"></i>
           <span>Settings</span>
         </button>
@@ -133,7 +133,8 @@
 
           <!-- Drag and Drop Zone -->
           <div class="upload-dropzone" id="dropzone">
-            <input type="file" id="imageFileInput" accept="image/*" class="file-input-hidden">
+            <label for="imageFileInput" class="sr-only">Upload target portrait image</label>
+            <input type="file" id="imageFileInput" accept="image/*" class="file-input-hidden" aria-label="Upload target portrait image">
             <div class="dropzone-content" id="dropzoneContent">
               <i class="fa-solid fa-cloud-arrow-up upload-icon"></i>
               <h4>Drag & drop portrait image here</h4>
@@ -141,7 +142,7 @@
               <span class="supported-formats">PNG, JPG, JPEG, WEBP</span>
             </div>
             
-            <div class="preview-container" id="previewContainer" style="display: none;">
+            <div class="preview-container is-hidden" id="previewContainer">
               <canvas id="faceDetectionCanvas"></canvas>
               <button class="btn-remove-image" id="removeImageBtn" title="Remove image">
                 <i class="fa-solid fa-xmark"></i>
@@ -207,7 +208,7 @@
           </div>
 
           <!-- Results Container -->
-          <div class="results-container" id="resultsContainer" style="display: none;">
+          <div class="results-container is-hidden" id="resultsContainer">
             
             <!-- Stage 1 Card -->
             <div class="stage-result-card" id="stage1Card">
@@ -327,15 +328,16 @@
               </div>
             </div>
 
-            <div class="verify-input-area" id="verifyFileInputArea" style="display: none;">
+            <div class="verify-input-area is-hidden" id="verifyFileInputArea">
               <label class="input-label">Upload Image to verify:</label>
-              <input type="file" id="verifyFileInput" class="custom-input-file" accept="image/*">
+              <label for="verifyFileInput" class="sr-only">Select image file to verify</label>
+              <input type="file" id="verifyFileInput" class="custom-input-file" accept="image/*" aria-label="Select image file to verify">
               <button class="btn-primary" id="btnExecuteVerifyFile"><i class="fa-solid fa-magnifying-glass"></i> Compute Hash & Verify</button>
             </div>
           </div>
 
           <!-- Verification Outcome Panel -->
-          <div class="verification-outcome" id="verificationOutcome" style="display: none;">
+          <div class="verification-outcome is-hidden" id="verificationOutcome">
             <!-- Rendered by JS -->
           </div>
         </div>
@@ -437,24 +439,24 @@ contract MatchRegistry {
   </main>
 
   <!-- Settings Modal -->
-  <div class="modal-backdrop" id="settingsModal" style="display: none;">
+  <div class="modal-backdrop is-hidden" id="settingsModal">
     <div class="modal-box glass-card">
       <div class="modal-header">
         <h3><i class="fa-solid fa-sliders"></i> Pipeline Engine Settings</h3>
-        <button class="btn-close-modal" id="closeSettingsBtn"><i class="fa-solid fa-xmark"></i></button>
+        <button class="btn-close-modal" id="closeSettingsBtn" aria-label="Close settings"><i class="fa-solid fa-xmark"></i></button>
       </div>
       <div class="modal-body">
-        <div class="form-group" style="margin-bottom: 1.25rem;">
+        <div class="form-group settings-key-group">
           <label class="input-label" for="serpApiKeyInput">
-            <i class="fa-solid fa-key" style="color:var(--accent-cyan); margin-right:0.35rem;"></i>
-            SerpApi Key (Google Lens Live Reverse Search)
+            <i class="fa-solid fa-key settings-key-icon"></i>
+            SerpApi Key (Live Reverse Image Search)
           </label>
           <input type="password" id="serpApiKeyInput" class="custom-input" placeholder="Paste your SerpApi Key here...">
-          <span style="font-size:0.75rem; color:var(--text-dim); display:block; margin-top:0.35rem;">
-            Enables full Google Lens reverse image search across all public web and social posts. Get a free API key at <a href="https://serpapi.com" target="_blank" style="color:var(--accent-cyan);">serpapi.com</a>.
+          <span class="settings-help-text">
+            Enables live reverse image search across public web and social posts. Get a free API key at <a href="https://serpapi.com" target="_blank" rel="noopener" class="settings-help-link">serpapi.com</a>.
           </span>
         </div>
-        <div class="modal-actions" style="display:flex; justify-content:flex-end; gap:0.75rem;">
+        <div class="modal-actions settings-actions">
           <button class="btn-secondary" id="cancelSettingsBtn">Cancel</button>
           <button class="btn-gradient-primary" id="saveSettingsBtn"><i class="fa-solid fa-check"></i> Save Settings</button>
         </div>
